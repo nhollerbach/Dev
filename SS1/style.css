@@ -164,11 +164,30 @@ body {
   background-color: aquamarine;
 }
 
+/*--------------------------------------------*/
+/*  LOG SECTION  */
 
+.logoBox {
+  width: 100px;
+  height: 100px;
 
-/* Spin calcs
-1- 29deg
-2- 58deg
-3- 87deg
-4- 116deg
-*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  
+  background:
+    url(resources/images/SS_Logo_002_Left_500px.png),
+    url(resources/images/SS_Logo_002_Top_500px.png),
+    url(resources/images/SS_Logo_002_Right_500px.png),
+    url(resources/images/SS_Logo_002_Bottom_500px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+
+}
+#logoTile {
+  position: absolute;
+}
+
