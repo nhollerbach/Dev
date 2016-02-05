@@ -1,0 +1,171 @@
+/*--------------------------------------------*/
+/*  MAIN SECTION  */
+body {
+  margin: 0px;
+  background: gray;
+  height: 100%;
+}
+/*--------------------------------------------*/
+/*  HEADER  */
+.header {
+  width: 100%;
+  height: 50px;
+  background: orange;
+}
+
+
+
+
+
+
+  
+
+
+
+
+
+/*--------------------------------------------*/
+/*  ARTIST SECTION (PIZZA BOX)  */
+
+.PizzaBox {
+  position: absolute;
+  border: 1px solid black;
+
+  top: 50%;
+  left:50%;
+
+  height: 800px;
+  width: 800px;
+  margin-top: -400px;
+  margin-left: -400px;
+}
+@media only screen and (max-width: 1000px), screen and (max-height: 800px) {
+  .PizzaBox {
+    height: 600px;
+    width: 600px;
+    margin-top: -250px;
+    margin-left: -300px;
+  }
+}
+@media only screen and (max-width: 600px), screen and (max-height: 600px) {
+  .PizzaBox {
+    height: 400px;
+    width: 400px;
+    top: 200px;
+    margin-top: -100px;
+    margin-left: -200px;
+  }
+}
+
+
+
+
+
+.circle {
+  /*SIZING / COLOR / SHAPE*/
+  height: 30%;
+  width:30%;
+  border: 1px solid black;
+  border-radius: 100%;
+  /*POSITIONING*/
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -15%;
+  margin-top: -15%
+  /*TRANSFORM*/
+  
+}
+.clipBoxOut {
+  /* Max FAN is 300deg, which is 30deg for 10 artists */
+  /* Use 30deg for 10-7 artist count....*/
+  /* ArtistsCount = 6 or 5, use 40deg */
+  /* So, for 10-7 artists, use: .53589% of the HEIGHT  */
+  /* For 6, use: 40deg --> .72794% of the HEIGHT  */
+  /* For 5, use: 40deg --> .72794% of the HEIGHT  */
+  /* For 4, use: 45deg --> .8284% of the HEIGHT  */
+  /* For 3, use: 50deg --> .9326% of the HEIGHT  */
+  /* For 2, use: 60deg --> 1.1547% of the HEIGHT  */
+  
+  /*SIZING / COLOR / SHAPE*/
+  height: 40%;
+
+  background-color: transparent;
+  -webkit-clip-path: polygon(50% 100%, 0% 0%, 100% 0%); 
+  
+  /*POSITIONING*/
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-top: -40%;
+  
+  /*TRANSFORM*/
+  transform-origin: center 100%;
+  transition-property: height, width, margin-left, margin-top;
+  transition-duration: 0s;
+  transition-timing-function: linear;
+  
+}
+
+
+.clipBoxOut:hover {
+  width: 24.115%;
+  height: 45%;
+  margin-left: -12%;
+  margin-top: -45%;
+}
+
+.clipBoxIn {
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  height: 90%;
+  width: 90%;
+  background-color: transparent;
+ -webkit-clip-path: polygon(50% 100%, 0% 0%, 100% 0%); 
+}
+.clip {
+  height: 60%;
+  width: 100%;
+  background-size: 100%;
+}
+
+
+
+
+#yellow {
+  background-color: yellow;
+}
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}
+#black {
+  background-color: black;
+}
+#green {
+  background-color: green;
+}
+#teal {
+  background-color: teal;
+}
+#white {
+  background-color: white;
+}
+#aquamarine {
+  background-color: aquamarine;
+}
+#orange {
+  background-color: orange;
+}
+
+
+
+/* Spin calcs
+1- 29deg
+2- 58deg
+3- 87deg
+4- 116deg
+*/
