@@ -1,24 +1,27 @@
 /*--------------------------------------------*/
 /*  MAIN SECTION  */
-body {
-  margin: 0px;
-  background: gray;
+html, body {
+  width: 100%;
   height: 100%;
+  margin: 0px;
+}
+
+body {
+  background-image: linear-gradient(to bottom,
+    #C4C7C9 0px,
+    #FFFFFF 100%
+    );
+  background-position: 0px 0px;
+  background-repeat:  no-repeat;
 }
 /*--------------------------------------------*/
 /*  HEADER  */
 .header {
   width: 100%;
   height: 50px;
-  background: orange;
+  background: transparent;
+  border: 1px solid black;
 }
-
-
-
-
-
-
-  
 
 
 
@@ -29,7 +32,7 @@ body {
 
 .PizzaBox {
   position: absolute;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 
   top: 50%;
   left:50%;
@@ -154,11 +157,11 @@ body {
 #white {
   background-color: white;
 }
-#aquamarine {
-  background-color: aquamarine;
-}
 #orange {
   background-color: orange;
+}
+#aquamarine {
+  background-color: aquamarine;
 }
 
 
