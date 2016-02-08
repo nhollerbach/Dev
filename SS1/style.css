@@ -176,7 +176,7 @@ body {
   left: 50%;
   margin-top: -50px;
   margin-left: -50px;
-  
+  /*
   background:
     url(resources/images/SS_Logo_002_Left_500px.png),
     url(resources/images/SS_Logo_002_Top_500px.png),
@@ -184,10 +184,39 @@ body {
     url(resources/images/SS_Logo_002_Bottom_500px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  
+  */
 
 }
-#logoTile {
+.logoSide {
+  width:100px;
+  height: 100px;
   position: absolute;
+}
+#coolDiv {
+  background:
+    url(resources/images/SS_Logo_002_Left_500px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+#Top {
+  background:
+    url(resources/images/SS_Logo_002_Top_500px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  top: -500px;
+}
+#Right {
+  background:
+    url(resources/images/SS_Logo_002_Right_500px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  right: -500px;
+}
+#Bottom {
+  background:
+    url(resources/images/SS_Logo_002_Bottom_500px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
