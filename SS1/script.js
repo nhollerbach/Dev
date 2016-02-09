@@ -107,8 +107,3 @@ function createSlice(color, count, index) {
   document.getElementsByClassName("PizzaBox")[0].appendChild(outdiv);
 }
 
-
-function setRotationAngle() {
-  
-}
-

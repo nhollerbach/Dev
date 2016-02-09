@@ -105,8 +105,8 @@ body {
   /*TRANSFORM*/
   transform-origin: center 100%;
   transition-property: height, width, margin-left, margin-top;
-  transition-duration: 0s;
-  transition-timing-function: linear;
+  transition-duration: .5s;
+  transition-timing-function: ease-out;
   
 }
 
@@ -176,47 +176,116 @@ body {
   left: 50%;
   margin-top: -50px;
   margin-left: -50px;
-  /*
-  background:
-    url(resources/images/SS_Logo_002_Left_500px.png),
-    url(resources/images/SS_Logo_002_Top_500px.png),
-    url(resources/images/SS_Logo_002_Right_500px.png),
-    url(resources/images/SS_Logo_002_Bottom_500px.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  */
 
 }
+
+
 .logoSide {
   width:100px;
   height: 100px;
   position: absolute;
-}
-#coolDiv {
-  background:
-    url(resources/images/SS_Logo_002_Left_500px.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 
 }
+
+
 #Top {
   background:
-    url(resources/images/SS_Logo_002_Top_500px.png);
+    url(resources/images/SS_Logo_002_top_500px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  top: -500px;
+  -webkit-animation-name: slideTop;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideTop;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
+
+@-webkit-keyframes slideTop {
+  from {margin-top: -1000px;}
+  to {margin-top: 0px;}
+}
+
+@keyframes slideTop {
+  from {margin-top: -1000px;}
+  to {margin-top: 0px;}
+}
+
 #Right {
   background:
     url(resources/images/SS_Logo_002_Right_500px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  right: -500px;
+  -webkit-animation-name: slideRight;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
+
+@-webkit-keyframes slideRight {
+  from {margin-left: 1000px;}
+  to {margin-left: 0px;}
+}
+
+@keyframes slideRight {
+  from {margin-left: 1000px;}
+  to {margin-left: 0px;}
+}
+
 #Bottom {
   background:
     url(resources/images/SS_Logo_002_Bottom_500px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  -webkit-animation-name: slideBottom;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideBottom;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
+@-webkit-keyframes slideBottom {
+  from {margin-top: 1000px;}
+  to {margin-top: 0px;}
+}
+
+@keyframes slideBottom {
+  from {margin-top: 1000px;}
+  to {margin-top: 0px;}
+}
+
+
+#Left {
+  background:
+    url(resources/images/SS_Logo_002_Left_500px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  -webkit-animation-name: slideLeft;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideLeft {
+  from {margin-left: -1000px;}
+  to {margin-left: 0px;}
+}
+
+@keyframes slideLeft {
+  from {margin-left: -1000px;}
+  to {margin-left: 0px;}
+}
