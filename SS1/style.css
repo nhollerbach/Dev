@@ -164,7 +164,7 @@ body {
   left: 50%;
   margin-top: -50px;
   margin-left: -50px;
-  background: url(resources/images/SS_Logo_002_full_500px.png);
+  /*background: url(resources/images/SS_Logo_002_full_500px.png);*/
   background-size: 100% 100%;
 }
 
@@ -285,8 +285,18 @@ body {
   left: 50%;
   top: 90%;
   margin-left: -3000px;
-  background: brown;
+  background: green;
   width:6000px;
   height:6000px;
   border-radius:100%;
+  overflow: hidden;
+}
+.lake {
+  position:absolute;
+  left:51%;
+  width:50px;
+  height: 100px;
+  margin-top:-25px;
+  border-radius:100%;
+  background: blue;
 }
