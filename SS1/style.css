@@ -65,20 +65,7 @@ body {
 
 
 
-.circle {
-  /*SIZING / COLOR / SHAPE*/
-  height: 30%;
-  width:30%;
-  border: 1px solid black;
-  border-radius: 100%;
-  /*POSITIONING*/
-  position: relative;
-  top: 50%;
-  left: 50%;
-  margin-left: -15%;
-  margin-top: -15%
-  /*TRANSFORM*/
-  
+
 }
 .clipBoxOut {
   /* Max FAN is 300deg, which is 30deg for 10 artists */
@@ -290,4 +277,16 @@ body {
 @keyframes slideLeft {
   from {margin-left: -1000px;}
   to {margin-left: 0px;}
+}
+
+
+.foreground {
+  position:absolute;
+  left: 50%;
+  top: 90%;
+  margin-left: -3000px;
+  background: brown;
+  width:6000px;
+  height:6000px;
+  border-radius:100%;
 }
