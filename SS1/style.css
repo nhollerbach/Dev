@@ -9,9 +9,10 @@ html, body {
 
 body {
   background-image: linear-gradient(to bottom,
-    #9d90b1 0px,
+    #cbcdd2 0px,
     #FFFFFF 100%
     );
+  background-image: #FFFFFF;
   background-position: 0px 0px;
   background-repeat:  no-repeat;
 }
@@ -155,31 +156,87 @@ body {
 /*--------------------------------------------*/
 /*  LOG SECTION  */
 
-.logoBox {
-  width: 100px;
-  height: 100px;
+#logoBox {
+  width: 200px;
+  height: 200px;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
-  /*background: url(resources/images/SS_Logo_002_full_500px.png);*/
+  margin-top: -100px;
+  margin-left: -100px;
+  
+
+}
+.glowBox {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+
+  background: url(resources/images/SS_Logo_002_topGlow_600px.png);
+  background-size: 100% 100%;
+
+  z-index: -1;
+  -webkit-animation-name: pulseGlow;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: pulseGlow;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes pulseGlow {
+  0% {opacity: 1;}
+  50% {opacity: .0;}
+  100% {opacity: 1;}
+}
+
+@keyframes pulseGlow {
+  0% {opacity: 1;}
+  50% {opacity: .0;}
+  100% {opacity: 1;}
+}
+#glowTop {
+  background: url(resources/images/SS_Logo_002_topGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowBottom {
+  background: url(resources/images/SS_Logo_002_bottomGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowLeft {
+  background: url(resources/images/SS_Logo_002_leftGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowRight {
+  background: url(resources/images/SS_Logo_002_rightGlow_600px.png);
   background-size: 100% 100%;
 }
 
 
+
+
+
+
+
+
+
 .logoSide {
-  width:100px;
-  height: 100px;
+  width:200px;
+  height: 200px;
   position: absolute;
+  opacity: 1;
 
 }
 
 
 #Top {
   background:
-    url(resources/images/SS_Logo_002_top_500px.png);
+    url(resources/images/SS_Logo_002_top_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-animation-name: slideTop;
@@ -204,7 +261,7 @@ body {
 
 #Right {
   background:
-    url(resources/images/SS_Logo_002_Right_500px.png);
+    url(resources/images/SS_Logo_002_Right_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-animation-name: slideRight;
@@ -229,7 +286,7 @@ body {
 
 #Bottom {
   background:
-    url(resources/images/SS_Logo_002_Bottom_500px.png);
+    url(resources/images/SS_Logo_002_Bottom_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-animation-name: slideBottom;
@@ -255,7 +312,7 @@ body {
 
 #Left {
   background:
-    url(resources/images/SS_Logo_002_Left_500px.png);
+    url(resources/images/SS_Logo_002_Left_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
