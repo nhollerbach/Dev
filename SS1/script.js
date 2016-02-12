@@ -1,9 +1,24 @@
 // Code goes here
-
-http://i.imgur.com/IkiLeXj.jpg
-
-
+var imageBackgroundArray = ["glowTop", "glowBottom","glowLeft","glowRight"];
 var colorArray = ["green", "blue", "teal", "yellow", "black", "orange", "aquamarine", "white"];
+
+
+
+function highlightOpenSessions(x) {
+  var logoSlide = document.getElementById("Top");
+  logoSlide.addEventListener("webkitAnimationEnd", function() {
+    
+    var logoBox = document.getElementById("logoBox");
+
+    for (i = 0; i < x; i++) {
+      var glowDiv = document.createElement('div');
+      glowDiv.className = 'glowBox';
+      glowDiv.id = imageBackgroundArray[i];
+      logoBox.appendChild(glowDiv);
+    };
+  }, false);
+}
+
 
 function buildAllSlices(x) {
   //First, remove all the existing elements from PizzaBox
