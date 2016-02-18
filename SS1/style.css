@@ -9,24 +9,12 @@ html, body {
 
 body {
   background-image: linear-gradient(to bottom,
-    #9d90b1 0px,
+    #cbcdd2 0px,
     #FFFFFF 100%
     );
   background-position: 0px 0px;
   background-repeat:  no-repeat;
 }
-/*--------------------------------------------*/
-/*  HEADER  */
-.header {
-  width: 100%;
-  height: 50px;
-  background: transparent;
-  border: 1px solid black;
-}
-
-
-
-
 
 /*--------------------------------------------*/
 /*  ARTIST SECTION (PIZZA BOX)  */
@@ -35,51 +23,52 @@ body {
   position: absolute;
   /*border: 1px solid black;*/
 
-  top: 50%;
+  top: 80%;
   left:50%;
 
   height: 800px;
   width: 800px;
   margin-top: -400px;
   margin-left: -400px;
+  opacity: 0;
 }
-@media only screen and (max-width: 1000px), screen and (max-height: 800px) {
+
+@media only screen and (max-width: 599px){
+  .PizzaBox {
+    height: 200px;
+    width: 200px;
+
+    margin-top: -100px;
+    margin-left: -100px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 849px){
   .PizzaBox {
     height: 600px;
     width: 600px;
-    margin-top: -250px;
+
+    margin-top: -300px;
     margin-left: -300px;
   }
 }
-@media only screen and (max-width: 600px), screen and (max-height: 600px) {
+@media only screen and (min-width: 850px) and (max-width: 1200px){
   .PizzaBox {
-    height: 400px;
-    width: 400px;
-    top: 200px;
-    margin-top: -100px;
-    margin-left: -200px;
+    height: 800px;
+    width: 800px;
+    margin-top: -400px;
+    margin-left: -400px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .PizzaBox {
+    height: 1000px;
+    width: 1000px;
+    margin-top: -500px;
+    margin-left: -500px;
   }
 }
 
 
-
-
-
-.circle {
-  /*SIZING / COLOR / SHAPE*/
-  height: 30%;
-  width:30%;
-  border: 1px solid black;
-  border-radius: 100%;
-  /*POSITIONING*/
-  position: relative;
-  top: 50%;
-  left: 50%;
-  margin-left: -15%;
-  margin-top: -15%
-  /*TRANSFORM*/
-  
-}
 .clipBoxOut {
   /* Max FAN is 300deg, which is 30deg for 10 artists */
   /* Use 30deg for 10-7 artist count....*/
@@ -165,34 +154,129 @@ body {
   background-color: aquamarine;
 }
 
-/*--------------------------------------------*/
-/*  LOG SECTION  */
 
-.logoBox {
+/*--------------------------------------------*/
+/*  HEADER  */
+header {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+}
+@font-face {
+  font-family: 'ssCustomFont';
+  src: url('resources/fonts/hetilica.ttf');
+}
+.brandName {
+  float: left;
+  width: 300px;
+  display: inline;
+  font-family: 'Eurostile';
+  color: gray;
+  opacity: 0;
+}
+.brandName > .main {
+  font-size: 30.5px;
+  float: right;
+}
+.brandName > .sub {
+  font-size: 14px;
+  float: right;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn .5s ease-in 1 forwards;
+}
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+
+/*--------------------------------------------*/
+/*  LOGO SECTION  */
+.logoStyle {
   width: 100px;
   height: 100px;
+  /* IF YOU CHANGE THE SIZE, DONT FORGET TO CHANGE THE MARGIN OFFSET
+      TO KEEP EVERYTHING CENTERED ON THE PAGE */
+}
 
+#logoBox {
   position: absolute;
-  top: 50%;
+  top: 10px;
   left: 50%;
-  margin-top: -50px;
+  /*margin-top: -100px;*/
   margin-left: -50px;
-  background: url(resources/images/SS_Logo_002_full_500px.png);
+}
+
+.logoBoxSpin {
+  -webkit-animation-name: spinRotate;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: cubic-bezier(.79,-0.44,.53,2.01);
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes spinRotate {
+  from{-webkit-transform:rotate(0deg);}
+  to{-webkit-transform:rotate(360deg);}
+}
+
+.glowBox {
+  position: absolute;
+  background: url(resources/images/SS_Logo_002_topGlow_600px.png);
+  background-size: 100% 100%;
+
+  z-index: -1;
+  -webkit-animation-name: pulseGlow;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: pulseGlow;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes pulseGlow {
+  0% {opacity: 1;}
+  50% {opacity: .0;}
+  100% {opacity: 1;}
+}
+
+@keyframes pulseGlow {
+  0% {opacity: 1;}
+  50% {opacity: .0;}
+  100% {opacity: 1;}
+}
+#glowTop {
+  background: url(resources/images/SS_Logo_002_topGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowBottom {
+  background: url(resources/images/SS_Logo_002_bottomGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowLeft {
+  background: url(resources/images/SS_Logo_002_leftGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowRight {
+  background: url(resources/images/SS_Logo_002_rightGlow_600px.png);
   background-size: 100% 100%;
 }
 
-
 .logoSide {
-  width:100px;
-  height: 100px;
   position: absolute;
+  opacity: 1;
 
 }
 
-
 #Top {
   background:
-    url(resources/images/SS_Logo_002_top_500px.png);
+    url(resources/images/SS_Logo_002_top_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-animation-name: slideTop;
@@ -217,7 +301,7 @@ body {
 
 #Right {
   background:
-    url(resources/images/SS_Logo_002_Right_500px.png);
+    url(resources/images/SS_Logo_002_Right_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-animation-name: slideRight;
@@ -242,7 +326,7 @@ body {
 
 #Bottom {
   background:
-    url(resources/images/SS_Logo_002_Bottom_500px.png);
+    url(resources/images/SS_Logo_002_Bottom_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -webkit-animation-name: slideBottom;
@@ -268,7 +352,7 @@ body {
 
 #Left {
   background:
-    url(resources/images/SS_Logo_002_Left_500px.png);
+    url(resources/images/SS_Logo_002_Left_600px.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
@@ -290,4 +374,26 @@ body {
 @keyframes slideLeft {
   from {margin-left: -1000px;}
   to {margin-left: 0px;}
+}
+
+
+.foreground {
+  position:absolute;
+  left: 50%;
+  top: 90%;
+  margin-left: -3000px;
+  background: green;
+  width:6000px;
+  height:6000px;
+  border-radius:100%;
+  overflow: hidden;
+}
+.lake {
+  position:absolute;
+  left:51%;
+  width:50px;
+  height: 100px;
+  margin-top:-25px;
+  border-radius:100%;
+  background: blue;
 }
