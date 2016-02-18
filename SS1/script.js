@@ -8,15 +8,24 @@ function highlightOpenSessions(x) {
   var logoSlide = document.getElementById("Top");
   logoSlide.addEventListener("webkitAnimationEnd", function() {
     
+
     var logoBox = document.getElementById("logoBox");
+    logoBox.className += " logoBoxSpin";
 
     for (i = 0; i < x; i++) {
       var glowDiv = document.createElement('div');
-      glowDiv.className = 'glowBox';
+      glowDiv.className = 'logoStyle glowBox';
       glowDiv.id = imageBackgroundArray[i];
       logoBox.appendChild(glowDiv);
     };
   }, false);
+
+  setTimeout(fadeIn("brandName"),2000);
+}
+function fadeIn(nameOfElement) {
+  var name = document.getElementsByClassName(nameOfElement)[0];
+  name.className += " fade-in";
+
 }
 
 
@@ -27,7 +36,6 @@ function buildAllSlices(x) {
     pizzaBox.removeChild(pizzaBox.firstChild);
   }
   
-  
   var size = x;
   for (i = 0; i < x; i++) {
     createSlice(colorArray[i], size, i);
@@ -35,6 +43,7 @@ function buildAllSlices(x) {
 
   var pizzaAngle = pizzaRotationAngle(x);
   pizzaBox.style.transform = 'rotate('+ pizzaAngle +'deg)';
+  fadeIn("PizzaBox");
 }
 
 function findSliceSize (count) {
