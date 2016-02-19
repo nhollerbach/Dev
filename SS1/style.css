@@ -9,7 +9,7 @@ html, body {
 
 body {
   background-image: linear-gradient(to bottom,
-    #cbcdd2 0px,
+    #4d4d4d 0px,
     #FFFFFF 100%
     );
   background-position: 0px 0px;
@@ -23,7 +23,7 @@ body {
   position: absolute;
   /*border: 1px solid black;*/
 
-  top: 80%;
+  top: 70%;
   left:50%;
 
   height: 800px;
@@ -152,6 +152,12 @@ body {
 }
 #aquamarine {
   background-color: aquamarine;
+}
+#gray {
+  background-color: gray;
+}
+#violet {
+  background-color: violet;
 }
 
 

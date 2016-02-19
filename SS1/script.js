@@ -1,11 +1,12 @@
 // Code goes here
 var imageBackgroundArray = ["glowTop", "glowBottom","glowLeft","glowRight"];
-var colorArray = ["green", "blue", "teal", "yellow", "black", "orange", "aquamarine", "white"];
+var colorArray = ["green", "blue", "teal", "yellow", "black", "orange", "aquamarine", "white","gray","violet"];
 
 
 
 function highlightOpenSessions(x) {
   var logoSlide = document.getElementById("Top");
+
   logoSlide.addEventListener("webkitAnimationEnd", function() {
     
 
@@ -20,8 +21,9 @@ function highlightOpenSessions(x) {
     };
   }, false);
 
-  setTimeout(fadeIn("brandName"),2000);
+  setTimeout(fadeIn("brandName"),3000);
 }
+
 function fadeIn(nameOfElement) {
   var name = document.getElementsByClassName(nameOfElement)[0];
   name.className += " fade-in";
