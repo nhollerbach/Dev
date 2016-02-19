@@ -9,7 +9,6 @@ function highlightOpenSessions(x) {
 
   logoSlide.addEventListener("webkitAnimationEnd", function() {
     
-
     var logoBox = document.getElementById("logoBox");
     logoBox.className += " logoBoxSpin";
 
@@ -21,14 +20,16 @@ function highlightOpenSessions(x) {
     };
   }, false);
 
-  setTimeout(fadeIn("brandName"),3000);
+  setTimeout(function() {
+    fadeIn("brandName");}
+    ,3000);
+
 }
 
 function fadeIn(nameOfElement) {
   var name = document.getElementsByClassName(nameOfElement)[0];
   name.className += " fade-in";
-
-}
+;}
 
 
 function buildAllSlices(x) {

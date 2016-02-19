@@ -1,0 +1,362 @@
+/*--------------------------------------------*/
+/*  MAIN SECTION  */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+
+body {
+  background-image: linear-gradient(to bottom,
+    #4d4d4d 0px,
+    #FFFFFF 100%
+    );
+  background-position: 0px 0px;
+  background-repeat:  no-repeat;
+}
+/*--------------------------------------------*/
+/*  MEDIA QUERIES  */
+@media screen and (min-width: 1000px) {
+  .PizzaBox {
+    width: 800px;
+    margin-left: -400px;
+  }
+  .videoHolder {
+    width: 800px;
+    margin-left: -400px;
+  }
+}
+@media screen and (max-width: 999px) and (min-width: 600px) {
+  .PizzaBox {
+    width: 550px;
+    margin-left: -275px;
+  }
+  .videoHolder {
+    width:550px;
+    margin-left: -275px;
+  }
+}
+/*--------------------------------------------*/
+/*  ARTIST SECTION  */
+.PizzaBox {
+  position: absolute;
+  height: 300px;
+  border: 1px solid black;
+  top: 200px;
+  left: 50%;
+}
+.pizzaSlice {
+  position: absolute;
+  height: 100%;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+}
+.artistMiniInfo {
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  bottom: 0px;
+  opacity: .6;
+  background: white;
+  visibility: hidden;
+}
+.pizzaSlice:hover .artistMiniInfo {
+  visibility: visible;
+}
+
+
+.videoHolder {
+  background-color: transparent;
+  top: 550px;
+  left: 50%;
+  position: absolute;
+  height: 250px;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+}
+.votingWidget {
+  position: absolute;
+  height:80%;
+  width:20%;
+  border: 1px solid black;
+  left: 2.5%;
+  top:10%;
+  visibility: hidden;
+}
+.videoBox {
+  position: absolute;
+  left: 50%;
+  margin-left: -25%;
+  height: 100%;
+  width: 50%;
+  background: yellow;
+  visibility: hidden;
+}
+.socialWidget {
+  position: absolute;
+  height:80%;
+  width:20%;
+  border: 1px solid black;
+  right:2.5%;
+  top: 10%;
+  visibility: hidden;
+}
+
+
+#yellow {
+  background-color: yellow;
+}
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}
+#black {
+  background-color: black;
+}
+#green {
+  background-color: green;
+}
+#teal {
+  background-color: teal;
+}
+#white {
+  background-color: white;
+}
+#orange {
+  background-color: orange;
+}
+#aquamarine {
+  background-color: aquamarine;
+}
+#gray {
+  background-color: gray;
+}
+#violet {
+  background-color: violet;
+}
+
+
+/*--------------------------------------------*/
+/*  HEADER  */
+header {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+}
+@font-face {
+  font-family: 'ssCustomFont';
+  src: url('resources/fonts/hetilica.ttf');
+}
+.brandName {
+  float: left;
+  width: 300px;
+  display: inline;
+  font-family: 'Eurostile';
+  color: gray;
+  opacity: 0;
+}
+.brandName > .main {
+  font-size: 30.5px;
+  float: right;
+}
+.brandName > .sub {
+  font-size: 14px;
+  float: right;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn .5s ease-in 1 forwards;
+}
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+
+/*--------------------------------------------*/
+/*  LOGO SECTION  */
+.logoStyle {
+  width: 100px;
+  height: 100px;
+  /* IF YOU CHANGE THE SIZE, DONT FORGET TO CHANGE THE MARGIN OFFSET
+      TO KEEP EVERYTHING CENTERED ON THE PAGE */
+}
+
+#logoBox {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  /*margin-top: -100px;*/
+  margin-left: -50px;
+}
+
+.logoBoxSpin {
+  -webkit-animation-name: spinRotate;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: cubic-bezier(.79,-0.44,.53,2.01);
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes spinRotate {
+  from{-webkit-transform:rotate(0deg);}
+  to{-webkit-transform:rotate(360deg);}
+}
+
+.glowBox {
+  position: absolute;
+  background: url(resources/images/SS_Logo_002_topGlow_600px.png);
+  background-size: 100% 100%;
+
+  z-index: -1;
+  -webkit-animation-name: pulseGlow;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: pulseGlow;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes pulseGlow {
+  0% {opacity: 1;}
+  50% {opacity: .0;}
+  100% {opacity: 1;}
+}
+
+@keyframes pulseGlow {
+  0% {opacity: 1;}
+  50% {opacity: .0;}
+  100% {opacity: 1;}
+}
+#glowTop {
+  background: url(resources/images/SS_Logo_002_topGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowBottom {
+  background: url(resources/images/SS_Logo_002_bottomGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowLeft {
+  background: url(resources/images/SS_Logo_002_leftGlow_600px.png);
+  background-size: 100% 100%;
+}
+#glowRight {
+  background: url(resources/images/SS_Logo_002_rightGlow_600px.png);
+  background-size: 100% 100%;
+}
+
+.logoSide {
+  position: absolute;
+  opacity: 1;
+
+}
+
+#Top {
+  background:
+    url(resources/images/SS_Logo_002_top_600px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-animation-name: slideTop;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideTop;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideTop {
+  from {margin-top: -1000px;}
+  to {margin-top: 0px;}
+}
+
+@keyframes slideTop {
+  from {margin-top: -1000px;}
+  to {margin-top: 0px;}
+}
+
+#Right {
+  background:
+    url(resources/images/SS_Logo_002_Right_600px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-animation-name: slideRight;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideRight {
+  from {margin-left: 1000px;}
+  to {margin-left: 0px;}
+}
+
+@keyframes slideRight {
+  from {margin-left: 1000px;}
+  to {margin-left: 0px;}
+}
+
+#Bottom {
+  background:
+    url(resources/images/SS_Logo_002_Bottom_600px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-animation-name: slideBottom;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideBottom;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideBottom {
+  from {margin-top: 1000px;}
+  to {margin-top: 0px;}
+}
+
+@keyframes slideBottom {
+  from {margin-top: 1000px;}
+  to {margin-top: 0px;}
+}
+
+
+#Left {
+  background:
+    url(resources/images/SS_Logo_002_Left_600px.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  -webkit-animation-name: slideLeft;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: slideLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideLeft {
+  from {margin-left: -1000px;}
+  to {margin-left: 0px;}
+}
+
+@keyframes slideLeft {
+  from {margin-left: -1000px;}
+  to {margin-left: 0px;}
+}
+
