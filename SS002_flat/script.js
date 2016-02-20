@@ -51,12 +51,11 @@ function createSlice(color, count, index) {
   var offset = xwidth*index;
   var artistDiv = document.createElement('div');
   artistDiv.addEventListener('click', function(){
-    showVideoContent(colorClassIdentifier)
-    ;}, false);
-  artistDiv.className = "pizzaSlice "+ colorClassIdentifier;
+    showVideoContent(colorClassIdentifier, color);}, false);
+  artistDiv.className = "pizzaSlice "+ color;
   artistDiv.style.width = xwidth+'%'; 
   artistDiv.style.left = offset+'%';
-  artistDiv.id = color;
+  artistDiv.id = colorClassIdentifier
 /* Artist profile INFO should go HERE --> This gets unhid on .pizzaSlice:hover */
 /*    This should be "mini" info...just the basics: Name(w/link), FB "like", Hometown*/
   var artistMiniInfo = document.createElement('div');
@@ -64,28 +63,39 @@ function createSlice(color, count, index) {
 
   artistDiv.appendChild(artistMiniInfo);
 
-/* VIDEO/VOTING/SOCIAL SHOULD GO IN THIS BOX */
+  
+  
+  
+  document.getElementsByClassName("PizzaBox")[0].appendChild(artistDiv);
+
+}
+function showVideoContent(identifier, color) {
+  /* VIDEO/VOTING/SOCIAL SHOULD GO IN THIS BOX */
   var videoHolder = document.getElementsByClassName("videoHolder")[0];
 
+  while(videoHolder.hasChildNodes()) {
+    videoHolder.removeChild(videoHolder.firstChild);
+  }
+
   var videoBox = document.createElement('div');
-  videoBox.className = "videoBox " + colorClassIdentifier;
+  videoBox.className = "videoBox";
+  videoBox.id = identifier+'_video';
+  videoBox.style.background = color;
   var votingWidget = document.createElement('div');
-  votingWidget.className = "votingWidget " + colorClassIdentifier;
+  votingWidget.className = "votingWidget";
+  votingWidget.id = identifier+'_voting';
   votingWidget.style.background = "yellow";
   var socialWidget = document.createElement('div');
-  socialWidget.className = "socialWidget " + colorClassIdentifier;
+  socialWidget.className = "socialWidget";
+  socialWidget.id  = identifier+'_social'; 
   socialWidget.style.background = "gray";
 
   videoHolder.appendChild(votingWidget);
   videoHolder.appendChild(videoBox);
   videoHolder.appendChild(socialWidget);
+
   /*VideoHolder is what the voting, the video, and the social media buttons ALL go into*/
   /*Each of those sections gets appended in a SPECIFIC ORDER, then hidden until user clicks on artist pic*/
-  
-  document.getElementsByClassName("PizzaBox")[0].appendChild(artistDiv);
 
-}
-function showVideoContent(identifier) {
-  
 }
 

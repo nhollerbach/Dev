@@ -42,7 +42,6 @@ body {
 .PizzaBox {
   position: absolute;
   height: 300px;
-  border: 1px solid black;
   top: 200px;
   left: 50%;
 }
@@ -72,7 +71,7 @@ body {
   left: 50%;
   position: absolute;
   height: 250px;
-  border: 1px solid black;
+
   -webkit-box-sizing: border-box;
 }
 .votingWidget {
@@ -82,7 +81,7 @@ body {
   border: 1px solid black;
   left: 2.5%;
   top:10%;
-  visibility: hidden;
+  visibility: visible;
 }
 .videoBox {
   position: absolute;
@@ -90,8 +89,7 @@ body {
   margin-left: -25%;
   height: 100%;
   width: 50%;
-  background: yellow;
-  visibility: hidden;
+  visibility: visible;
 }
 .socialWidget {
   position: absolute;
@@ -100,41 +98,53 @@ body {
   border: 1px solid black;
   right:2.5%;
   top: 10%;
-  visibility: hidden;
+  visibility: visible;
 }
 
 
-#yellow {
-  background-color: yellow;
+.yellow {
+  background-image: url(resources/images/v_cropped.png);
+  background-position: center top;
+  background-size: 200px 400px;
 }
-#red {
+.red {
   background-color: red;
 }
-#blue {
-  background-color: blue;
+.blue {
+  background-image: url(resources/images/samUL_cropped.png);
+  background-position: center top;
+  background-size: 200px 400px;
 }
-#black {
-  background-color: black;
+.black {
+  background-image: url(resources/images/v2_cropped.png);
+  background-position: center top;
+  background-size: 200px 400px;
 }
-#green {
-  background-color: green;
+.green {
+  background-image: url(resources/images/rio_cropped.png);
+  background-position: center top;
+  background-size: 200px 400px;
 }
-#teal {
-  background-color: teal;
+.teal {
+  background-image: url(resources/images/nathan_cropped.png);
+  background-position: center top;
+  background-size: 200px 400px;
 }
-#white {
+.white {
   background-color: white;
 }
-#orange {
-  background-color: orange;
+.orange {
+  background-image: url(resources/images/rando_cropped.png);
+  background-position: center top;
+  background-size: 200px 400px;
 }
-#aquamarine {
+.aquamarine {
   background-color: aquamarine;
 }
-#gray {
+.gray {
   background-color: gray;
 }
-#violet {
+.violet {
   background-color: violet;
 }
 
