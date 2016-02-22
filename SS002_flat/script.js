@@ -85,10 +85,30 @@ function showVideoContent(identifier, color) {
   votingWidget.className = "votingWidget";
   votingWidget.id = identifier+'_voting';
   votingWidget.style.background = "yellow";
+    var NS = "http://www.w3.org/2000/svg";
+    var svgWrapper = document.createElementNS(NS, 'svg');
+    var svgStar1 = document.createElementNS(NS, 'polygon');
+    var svgStar2 = document.createElementNS(NS, 'polygon');
+
+    svgWrapper.style.background = 'transparent';
+    svgStar1.setAttribute('points', "45,22.5 22.5,39.5 36.1,39.6175 30,69.5 60,69.5 67.5,39.5");
+    svgStar1.setAttribute('stroke', '#cbcdd2');
+    svgStar1.setAttribute('fill', 'transparent');
+    svgStar2.setAttribute('points', "45,22.5 30,69.5 67.5,39.5 22.5,39.5 60,69.5");
+    svgStar2.setAttribute('stroke', '#cbcdd2');
+    svgStar2.setAttribute('fill', '#cbcdd2');
+    svgStar2.setAttribute('class', "small");
+    /*svgStar.setAttribute('points', "100,10 40,198 190,78 10,78 160,198");*/
+
   var socialWidget = document.createElement('div');
   socialWidget.className = "socialWidget";
   socialWidget.id  = identifier+'_social'; 
   socialWidget.style.background = "gray";
+
+  svgWrapper.appendChild(svgStar1);
+  svgWrapper.appendChild(svgStar2);
+  votingWidget.appendChild(svgWrapper);
+
 
   videoHolder.appendChild(votingWidget);
   videoHolder.appendChild(videoBox);

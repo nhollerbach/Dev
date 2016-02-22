@@ -42,7 +42,7 @@ body {
 .PizzaBox {
   position: absolute;
   height: 300px;
-  top: 200px;
+  top: 150px;
   left: 50%;
 }
 .pizzaSlice {
@@ -67,7 +67,7 @@ body {
 
 .videoHolder {
   background-color: transparent;
-  top: 550px;
+  top: 500px;
   left: 50%;
   position: absolute;
   height: 250px;
@@ -83,6 +83,19 @@ body {
   top:10%;
   visibility: visible;
 }
+svg {
+  border: 1px solid black;
+  width: 75px;
+  height: 75px;
+}
+.small {
+   transform: scale(.4, .4);
+  -webkit-transform-origin: 50% 50%;
+}
+
+
+
+
 .videoBox {
   position: absolute;
   left: 50%;
