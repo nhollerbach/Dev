@@ -76,24 +76,74 @@ body {
 }
 .votingWidget {
   position: absolute;
+  border: 1px solid black;
   height:80%;
   width:20%;
-  border: 1px solid black;
   left: 2.5%;
   top:10%;
   visibility: visible;
 }
+/*----------------------------------------------*/
+
+/* START OF FLIP CONTAINER & SVG ELEMENT STYLING*/
+.flip-container {
+  perspective: 1000;
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  background: red;
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+.voteText {
+  position: absolute;
+  top: 25%;
+}
+/* back, initially hidden pane */
+.back {
+  background: transparent;
+  transform: rotateY(180deg);
+}
 svg {
-  border: 1px solid black;
-  width: 75px;
-  height: 75px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 .small {
-   transform: scale(.4, .4);
+   transform: scale(.6, .6);
   -webkit-transform-origin: 50% 50%;
 }
-
-
+/*-------------------------------------------------*/
 
 
 .videoBox {
@@ -117,37 +167,45 @@ svg {
 
 .yellow {
   background-image: url(resources/images/v_cropped.png);
+  background-repeat: no-repeat;
   background-position: center top;
   background-size: 200px 400px;
 }
 .red {
   background-color: red;
+  background-repeat: no-repeat;
 }
 .blue {
   background-image: url(resources/images/samUL_cropped.png);
+  background-repeat: no-repeat;
   background-position: center top;
   background-size: 200px 400px;
 }
 .black {
   background-image: url(resources/images/v2_cropped.png);
+  background-repeat: no-repeat;
   background-position: center top;
   background-size: 200px 400px;
 }
 .green {
   background-image: url(resources/images/rio_cropped.png);
+  background-repeat: no-repeat;
   background-position: center top;
   background-size: 200px 400px;
 }
 .teal {
   background-image: url(resources/images/nathan_cropped.png);
+  background-repeat: no-repeat;
   background-position: center top;
   background-size: 200px 400px;
 }
 .white {
   background-color: white;
+  background-repeat: no-repeat;
 }
 .orange {
   background-image: url(resources/images/rando_cropped.png);
+  background-repeat: no-repeat;
   background-position: center top;
   background-size: 200px 400px;
 }

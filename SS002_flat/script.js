@@ -60,15 +60,10 @@ function createSlice(color, count, index) {
 /*    This should be "mini" info...just the basics: Name(w/link), FB "like", Hometown*/
   var artistMiniInfo = document.createElement('div');
   artistMiniInfo.className = "artistMiniInfo";
-
   artistDiv.appendChild(artistMiniInfo);
-
-  
-  
-  
   document.getElementsByClassName("PizzaBox")[0].appendChild(artistDiv);
-
 }
+
 function showVideoContent(identifier, color) {
   /* VIDEO/VOTING/SOCIAL SHOULD GO IN THIS BOX */
   var videoHolder = document.getElementsByClassName("videoHolder")[0];
@@ -77,27 +72,52 @@ function showVideoContent(identifier, color) {
     videoHolder.removeChild(videoHolder.firstChild);
   }
 
+  /*This is where the video goes*/
   var videoBox = document.createElement('div');
   videoBox.className = "videoBox";
   videoBox.id = identifier+'_video';
   videoBox.style.background = color;
+
+  /*This is the box that holds the voting & the timer */
   var votingWidget = document.createElement('div');
   votingWidget.className = "votingWidget";
   votingWidget.id = identifier+'_voting';
-  votingWidget.style.background = "yellow";
+  votingWidget.style.background = "transparent";
+
+  /*This is the FLIP VOTE stuff*/
+  var flipContainer = document.createElement('div');
+    flipContainer.className = 'flip-container';
+    flipContainer.onclick = function() {
+      this.classList.toggle('hover');
+    };
+  var flipper = document.createElement('div');
+    flipper.className = 'flipper';
+  var front = document.createElement('div');
+    front.className = "front";
+  var back = document.createElement('div');
+    back.className = "back";
+
+  var voteText = document.createElement('p');
+    voteText.className = 'voteText';
+    voteText.innerHTML = 'VOTE!!!';
+    /*This is the stuff for the SVG element*/
     var NS = "http://www.w3.org/2000/svg";
     var svgWrapper = document.createElementNS(NS, 'svg');
     var svgStar1 = document.createElementNS(NS, 'polygon');
     var svgStar2 = document.createElementNS(NS, 'polygon');
 
     svgWrapper.style.background = 'transparent';
-    svgStar1.setAttribute('points', "45,22.5 22.5,39.5 36.1,39.6175 30,69.5 60,69.5 67.5,39.5");
-    svgStar1.setAttribute('stroke', '#cbcdd2');
-    svgStar1.setAttribute('fill', 'transparent');
+    svgStar1.setAttribute('points', "45,22.5 30,69.5 67.5,39.5 22.5,39.5 60,69.5");
+    svgStar1.setAttribute('stroke', 'transparent');
+    svgStar1.setAttribute('fill', '#cbcdd2');
     svgStar2.setAttribute('points', "45,22.5 30,69.5 67.5,39.5 22.5,39.5 60,69.5");
-    svgStar2.setAttribute('stroke', '#cbcdd2');
-    svgStar2.setAttribute('fill', '#cbcdd2');
+    svgStar2.setAttribute('stroke', 'gray');
+    svgStar2.setAttribute('fill', 'gray');
     svgStar2.setAttribute('class', "small");
+    svgWrapper.addEventListener('click', function() {
+      svgStar2.setAttribute('fill', "red");
+      svgStar1.setAttribute('fill', "yellow");
+    }, false);
     /*svgStar.setAttribute('points', "100,10 40,198 190,78 10,78 160,198");*/
 
   var socialWidget = document.createElement('div');
@@ -105,10 +125,17 @@ function showVideoContent(identifier, color) {
   socialWidget.id  = identifier+'_social'; 
   socialWidget.style.background = "gray";
 
+  
+
   svgWrapper.appendChild(svgStar1);
   svgWrapper.appendChild(svgStar2);
-  votingWidget.appendChild(svgWrapper);
+  front.appendChild(voteText);
+  back.appendChild(svgWrapper);
 
+  flipper.appendChild(front);
+  flipper.appendChild(back);
+  flipContainer.appendChild(flipper);
+  votingWidget.appendChild(flipContainer);
 
   videoHolder.appendChild(votingWidget);
   videoHolder.appendChild(videoBox);
